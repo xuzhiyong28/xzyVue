@@ -24,6 +24,12 @@ let http = axios.create({
 //请求拦截器
 http.interceptors.request.use(config => {
   console.log('===axios请求拦截器,可对request数据进行修改===');
+  if(config.method == 'post'){
+
+  }
+  if(config.method == 'get'){
+
+  }
   return config;
 },error => {
 
