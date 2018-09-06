@@ -10,7 +10,6 @@ let http = axios.create({
   },
   //向服务器发送请求时修改参数
   transformRequest : [function(data){
-    console.log('请求参数=' + data);
     //对请求进行格式化
     return data;
   }],
@@ -24,12 +23,16 @@ let http = axios.create({
 //请求拦截器
 http.interceptors.request.use(config => {
   console.log('===axios请求拦截器,可对request数据进行修改===');
+  var _ts = new Date(); //对每个请求加时间戳
   if(config.method == 'post'){
-
+    if(config.data != null){
+      config.data['_ts'] = _ts.getTime();
+    }
   }
   if(config.method == 'get'){
-
+    config.url = config.url.indexOf('?') > 0 ? (config.url + "&_ts=" + _ts.getTime()) : ( config.url + "?_ts=" + _ts.getTime() );
   }
+  console.log(JSON.stringify(config));
   return config;
 },error => {
 

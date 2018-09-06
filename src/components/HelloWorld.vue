@@ -21,6 +21,7 @@
     computed: {},
     mounted() {
       this.$http.post('/news/index', {'name': 'xuzhiyong'}, response => {});
+      //this.$http.get('/news/index?name=xuzhiyong',{},response=>{});
     }
   }
 </script>

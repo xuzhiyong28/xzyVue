@@ -5,4 +5,4 @@ const getNewIndexData = function () {
   let json = require('./new-index.json');
   return json;
 }
-Mock.mock(/\/news\/index/, /post|get/i, getNewIndexData);
+Mock.mock(/\/news\/index(\??\w?)/, /post|get/i, getNewIndexData);
