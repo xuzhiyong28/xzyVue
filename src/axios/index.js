@@ -23,12 +23,12 @@ let http = axios.create({
 
 //请求拦截器
 http.interceptors.request.use(config => {
-  console.log('===axios请求拦截器===');
+  console.log('===axios请求拦截器,可对request数据进行修改===');
   return config;
 });
 
 http.interceptors.response.use(config => {
-  console.log('===axios响应拦截器===');
+  console.log('===axios响应拦截器，可对response数据进行修改===');
   return config;
 })
 
@@ -41,6 +41,7 @@ function apiAxios(method, url, params, response) {
   }).then(function (res) {
     response(res);
   }).catch(function (err) {
+    console.log('===请求发生错误===');
     response(err);
   })
 }
