@@ -25,11 +25,15 @@ let http = axios.create({
 http.interceptors.request.use(config => {
   console.log('===axios请求拦截器,可对request数据进行修改===');
   return config;
+},error => {
+
 });
 
 http.interceptors.response.use(config => {
   console.log('===axios响应拦截器，可对response数据进行修改===');
   return config;
+},error => {
+
 })
 
 function apiAxios(method, url, params, response) {
