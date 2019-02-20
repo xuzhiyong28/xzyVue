@@ -20,7 +20,11 @@
     },
     computed: {},
     mounted() {
-      this.$http.post('/news/index', {'name': 'xuzhiyong'}, response => {});
+      this.$http.post('/news/index', {'name': 'xuzhiyong'}, response => {
+        console.log("========输出返回值==========");
+        console.log(response.status);
+        console.log(response.data);
+      });
       //this.$http.get('/news/index?name=xuzhiyong',{},response=>{});
     }
   }
