@@ -3,6 +3,8 @@ import Vuex from 'vuex';
 
 Vue.use(Vuex);
 
+//可以使用this.$store.state.name获取
+//有可以使用mapState辅助函数
 const store = new Vuex.Store({
   state : {
     name : 'xuzhiyong',
@@ -21,6 +23,9 @@ const store = new Vuex.Store({
     //this.$store.commit('updateName' , 'xuzhiyong2')
     updateName(state,val){
       state.name = val;
+    },
+    updateAge(state,newAge){
+      state.age += newAge;
     }
   },
   /***
