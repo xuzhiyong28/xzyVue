@@ -8,6 +8,12 @@
     </ul>
     <button @click="changeAge">更改年龄</button>
     <button @click="changeName">更改姓名</button>
+    <h1>router-连接到其他页面</h1>
+    <router-link to="/children">router-link-子节点</router-link>
+    <h1>路由嵌套</h1>
+    <keep-alive>
+      <router-view></router-view>
+    </keep-alive>
   </div>
 </template>
 

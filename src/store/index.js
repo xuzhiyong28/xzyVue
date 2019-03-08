@@ -30,6 +30,7 @@ const store = new Vuex.Store({
   },
   /***
    * gettting相当于vue的计算属性，可以对值进行再次计算
+   * 使用方法 this.$store.getters.getMyArray
    */
   getters : {
     getMyArray : state => {
