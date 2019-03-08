@@ -35,6 +35,14 @@ const store = new Vuex.Store({
     getMyArray : state => {
         return state.myArray.filter(obj => obj.text);
     }
+  },
+  //actions使用来操作mutations的顺便可以加一些自己的逻辑
+  //actions在vue中可以this.$store.dispatch('syncUploadAge',10)来用
+  actions : {
+    syncUploadAge({ commit, state }, count){
+      console.log('====开始updateName===');
+      commit('updateAge',count);
+    }
   }
 });
 
