@@ -13,7 +13,8 @@ export default new Router({
       component: HelloWorld,
       children : [
         //http://localhost:8080/#/demo1
-        {path : 'demo1', component : DemoComponents1}
+        //meta为路由原数据 可以用在全局路由拦截时做判断
+        {path : 'demo1', component : DemoComponents1 , meta : {needLogin : true}}
       ]
     },
     {
