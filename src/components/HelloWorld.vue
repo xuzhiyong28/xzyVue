@@ -14,13 +14,19 @@
     <keep-alive>
       <router-view></router-view>
     </keep-alive>
+    <h1>组件</h1>
+    <demo2 ref="demo2" :text="msg" @updateTest="updateDemoTest"></demo2>
   </div>
 </template>
 
 <script>
   import { mapState,mapMutations,mapActions  } from 'vuex';
+  import demo2 from './DemoComponents2';
   export default {
     name: 'HelloWorld',
+    components :{
+      demo2
+    },
     data() {
       return {
         msg: 'HelloWorld',
@@ -54,7 +60,11 @@
       },
       ...mapMutations({
         updateName : 'updateName' // 将 `this.updateName()` 映射为 `this.$store.commit('updateName')`
-      })
+      }),
+      updateDemoTest : function(text){
+         this.msg = text;
+         //this.$refs.xxx 也可以使用refs来调用子组件的data和方法
+      }
     }
   }
 </script>
