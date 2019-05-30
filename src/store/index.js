@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-
+import permission from './otherstore'
 Vue.use(Vuex);
 
 //可以使用this.$store.state.name获取
@@ -44,6 +44,9 @@ const store = new Vuex.Store({
       console.log('====开始updateName===');
       commit('updateAge',count);
     }
+  },
+  modules : {
+    permission
   }
 });
 

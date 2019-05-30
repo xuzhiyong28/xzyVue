@@ -4,7 +4,7 @@
     <ul>
       <li>{{globalName}}</li>
       <li>{{getMyArray}}</li>
-      <li>{{tmpAge}} - {{myArraySize}} - {{tmpName}}</li>
+      <li>{{tmpAge}} - {{myArraySize}} - {{tmpName}} - {{getPhone}}</li>
     </ul>
     <button @click="changeAge">更改年龄</button>
     <button @click="changeName">更改姓名</button>
@@ -31,7 +31,8 @@
       return {
         msg: 'HelloWorld',
         globalName: this.$store.state.name,
-        getMyArray: this.$store.getters.getMyArray
+        getMyArray: this.$store.getters.getMyArray,
+        getPhone : this.$store.state.permission.phone
       }
     },
     //计算属性
